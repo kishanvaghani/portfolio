@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+  }
 .bg-img{
     background-image: url(./images/blur.jpeg);
     width: 100%;
@@ -7,6 +10,10 @@
     background-repeat: no-repeat;
 }
 .nav-item a:hover{
+    background-color: gold !important;
+    border-radius: 3px !important;
+}
+.nav-item a.active{
     background-color: gold !important;
     border-radius: 3px !important;
 }
@@ -61,11 +68,6 @@
     /* left: 50%; */
     /* transform: translate(0, -10%); */
 }
-    /* .flexible{
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    } */
 .icon{
     font-size: 45px !important;
     color:gold;
@@ -107,40 +109,138 @@
 .golden1:nth-child(2) { 
     background-color:white;
   }
-  .btn-download{
+.btn-download{
     color: white !important;
     background-color: black !important;
-  }
+}
 
-  .bg-img1{
+.bg-img1{
     background-image: url(./images/blur.jpeg);
     width: 100%;
     /* height: 100vh; */
     /* filter: blur(8px); */
     background-size: cover;
     background-repeat: no-repeat;
-  }
-  .bg-color1{
-      background-color: #10141e;
-  }
-  .bg-color2{
+}
+.bg-color1{
+    background-color: #10141e;
+}
+.bg-color2{
     background-color: #010308;
-  }
-  .list-footer{
-      justify-content: space-evenly;
-  }
-  .input-setting{
+}
+.list-footer{
+    justify-content: space-evenly;
+}
+.input-setting{
     background: transparent !important;
     color: white;
-    
-  }
-  @media screen and (max-width:1200px){
+}
+@media screen and (max-width:1200px){
     .iphone{
         bottom: unset !important;
     }
 }
-  @media screen and (min-width:1140px){
+@media screen and (min-width:1140px){
     .lap-abs{
         position: absolute;
     }
 }
+/* LOADER CSS  */
+
+.animation-zoom-in{
+    /* animation: up 2s linear 1s 1 normal forwards; */
+    animation-name: up;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+@keyframes up {
+    0% {transform: scale(0);}
+    100% {transform:scale(1);}
+  }
+  .slide-left{
+      animation-name: slide-left;
+      animation-duration: 0.5s;
+  }
+  @keyframes slide-left{
+      0% {transform: translate(-100%,-10%) scale(0);}
+      100% {transform:translate(0,0) scale(1);}
+  }
+  .slide-right{
+    animation-name: slide-right;
+    animation-duration: 0.5s;
+}
+@keyframes slide-right{
+    0% {transform: translate(100%,-10%) scale(0);}
+    100% {transform:translate(0,0) scale(1);}
+}
+/* IMAGE-CARD-SLIDE */
+.animation-img-slide-right{
+    animation-name: img-slide-right;
+    animation-duration: 01s;
+    animation-timing-function: linear;
+}
+@keyframes img-slide-right{
+    0% {transform: translate(-100%,0);}
+    100% {transform: translate(0%,0);}
+}
+/* .animation-img-slide-right-2{
+    animation-name: img-slide-right-2;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+
+}
+@keyframes img-slide-right-2{
+    0% {transform: translate(-100%,0);}
+    100% {transform: translate(0%,0);}
+}
+.animation-img-slide-right-3{
+    animation-name: img-slide-right-3;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+
+}
+@keyframes img-slide-right-3{
+    0% {transform: translate(-100%,0);}
+    100% {transform: translate(0%,0);}
+}
+.animation-img-slide-right-4{
+    animation-name: img-slide-right-4;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+
+}
+@keyframes img-slide-right-4{
+    0% {transform: translate(-100%,0);}
+    100% {transform: translate(0%,0);}
+} */
+
+.animation-left-side{
+    animation-name: animation-left-side;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+}
+@keyframes animation-left-side{
+    0% {transform: translate(100%,0);}
+    100% {transform: translate(0%,0);}
+}
+.loader-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffdd00;
+    opacity: 0.7;
+}
+.content {display:none;}
+.preload { 
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
